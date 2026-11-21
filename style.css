@@ -30,6 +30,11 @@
   --ground: #F5EFE2; --ink: #2A2116; --muted: #5E513D; --rule: #D8CBAE;
   --field: #F2B233; --field-text: #2A2116; --band: #5A3B12; --accent: #F2B233; --soft: #EEE0C2; --num: #5A3B12; --link: #7A4E0E;
 }
+:root[data-palette="river"] {
+  /* River and forest (proposed 21 Nov 2026): deep river blue, leaf-green accent */
+  --ground: #F2F1EC; --ink: #1B2426; --muted: #526064; --rule: #CBD3D2;
+  --field: #1F4C5B; --field-text: #EEF4F3; --band: #14303A; --accent: #9CC77A; --soft: #DCE6E3; --num: #1F4C5B; --link: #1F5E70;
+}
 :root[data-palette="vermilion"] {
   --ground: #F4EEE6; --ink: #1B2033; --muted: #555A6B; --rule: #D5C8BC;
   --field: #C8401F; --field-text: #FFFFFF; --band: #1B2547; --accent: #E2603F; --soft: #EBDCD0; --num: #C8401F; --link: #C8401F;
@@ -76,11 +81,11 @@ a:focus-visible, .button:focus-visible { outline: 2px solid currentColor; outlin
 .home .site-nav a:hover { color: var(--field-text); opacity: 0.8; }
 
 /* Home: the colour field */
-.hero { background: var(--field); color: var(--field-text); padding: clamp(5rem, 13vw, 10.5rem) 0 clamp(6rem, 14vw, 12rem); }
+.hero { background: var(--field); color: var(--field-text); padding: clamp(3.5rem, 8vw, 6.5rem) 0 clamp(4rem, 9vw, 7.5rem); }
 .hero h1 {
   font-family: var(--serif); font-weight: 300; letter-spacing: -0.015em;
-  font-size: clamp(3rem, 8vw, 7.25rem); line-height: 0.98;
-  margin: 0 0 2.75rem; max-width: 13ch; text-wrap: balance;
+  font-size: clamp(2.75rem, 6.5vw, 6rem); line-height: 0.98;
+  margin: 0 0 2rem; max-width: 19ch; text-wrap: balance;
 }
 .hero .sub { display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem 2.5rem; }
 .hero p { margin: 0; font-size: 1.25rem; line-height: 1.55; max-width: 44ch; }
@@ -100,12 +105,12 @@ a:focus-visible, .button:focus-visible { outline: 2px solid currentColor; outlin
 .figure span { font-size: 1.0625rem; line-height: 1.5; max-width: 28ch; }
 
 /* Home: areas and about teaser */
-.home-areas { padding: clamp(5rem, 10vw, 10rem) 0 clamp(4.5rem, 9vw, 9rem); }
-.home-about { padding-bottom: clamp(5rem, 10vw, 10rem); }
-.home-about .wrap { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr)); gap: 2.5rem 4rem; align-items: center; }
+.home-areas { padding: clamp(3.5rem, 7vw, 6.5rem) 0 clamp(3rem, 6vw, 6rem); }
+.home-about { padding-bottom: clamp(3.5rem, 7vw, 6.5rem); }
+.home-about .wrap { display: block; }
 .home-about figure { margin: 0; }
 .home-about img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
-.home-about h2 { margin-bottom: 1.25rem; }
+.home-about h2 { margin-bottom: 1.25rem; max-width: none; font-size: clamp(1.5rem, 2.6vw, 2.25rem); }
 .home-about p { font-size: 1.125rem; line-height: 1.65; }
 .more-link { font-weight: 400; color: var(--ink); }
 
@@ -114,7 +119,7 @@ a:focus-visible, .button:focus-visible { outline: 2px solid currentColor; outlin
   font-size: 0.9375rem; font-weight: 400;
   color: var(--muted); margin: 0 0 1rem;
 }
-h2 { font-family: var(--serif); font-weight: 300; color: var(--ink); font-size: clamp(2rem, 4vw, 2.75rem); line-height: 1.15; margin: 0 0 2.5rem; max-width: 26ch; text-wrap: balance; }
+h2 { font-family: var(--serif); font-weight: 300; color: var(--ink); font-size: clamp(2rem, 4vw, 2.75rem); line-height: 1.15; margin: 0 0 2rem; max-width: 26ch; text-wrap: balance; }
 h3 { font-family: var(--serif); font-weight: 300; color: var(--ink); font-size: 1.75rem; line-height: 1.2; margin: 0 0 0.75rem; }
 p { margin: 0 0 1rem; }
 strong { font-weight: 500; }
@@ -125,9 +130,11 @@ strong { font-weight: 500; }
 }
 
 /* Areas of work list (home and services page) */
+.group-label { margin: 0 0 0.75rem; font-weight: 600; color: var(--ink); font-size: 1rem; }
+.service-list + .group-label { margin-top: 2.25rem; }
 .service-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
 .service-list li { border-bottom: 1px solid var(--rule); }
-.service-list a { display: grid; gap: 0.5rem 3.5rem; padding: 1.9rem 0; text-decoration: none; color: var(--ink); }
+.service-list a { display: grid; gap: 0.5rem 3.5rem; padding: 1.3rem 0; text-decoration: none; color: var(--ink); }
 @media (min-width: 52rem) { .service-list a { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto; align-items: baseline; } }
 .service-list h3 { margin: 0; }
 .service-list p { margin: 0; font-size: 1.0625rem; color: var(--muted); }
@@ -135,15 +142,20 @@ strong { font-weight: 500; }
 .service-list a:hover h3 { color: var(--link); }
 
 /* Inner pages */
-.page-head { padding: clamp(3.5rem, 8vw, 6.5rem) 0 1.5rem; }
+.page-head { padding: clamp(2.5rem, 6vw, 4.5rem) 0 1.25rem; }
 .page-head .label a { color: inherit; text-decoration: none; }
 .page-head h1 { font-family: var(--serif); font-weight: 300; color: var(--ink); font-size: clamp(2.5rem, 5.5vw, 4.25rem); line-height: 1.05; letter-spacing: -0.01em; margin: 0 0 1.75rem; max-width: 18ch; text-wrap: balance; }
 .page-head .lead { max-width: var(--measure); font-size: 1.25rem; margin: 0; }
-.page-body { padding: 2rem 0 5rem; }
+.page-body { padding: 1.5rem 0 3.5rem; }
 .page-body h2 { font-size: 1.75rem; margin: 3rem 0 1rem; }
 .page-body h2:first-child { margin-top: 0; }
+/* Section headings inside the area-of-work pages: plain sans, like the body text */
+.page-body > .wrap > .prose > h2 { font-family: var(--sans); font-weight: 400; font-size: 1.25rem; line-height: 1.4; color: var(--ink); margin: 2.5rem 0 0.75rem; max-width: none; }
+.page-body > .wrap > .prose > h2:first-child { margin-top: 0; }
 .page-body ul, .page-body > .wrap > ol { padding-left: 1.2rem; }
 .page-body li { margin-bottom: 0.4rem; }
+.page-body .service-list { padding-left: 0; }
+.page-body .service-list li { margin-bottom: 0; }
 .page-body .note { margin-top: 2.5rem; }
 .standards { border-collapse: collapse; width: 100%; max-width: var(--measure); font-size: 1rem; margin: 0 0 1rem; }
 .standards th, .standards td { text-align: left; vertical-align: top; padding: 0.85rem 1rem 0.85rem 0; border-bottom: 1px solid var(--rule); }
@@ -159,7 +171,8 @@ strong { font-weight: 500; }
 
 /* About */
 .about { display: grid; gap: 2.5rem; }
-@media (min-width: 52rem) { .about { grid-template-columns: 2fr 1fr; gap: 4.5rem; } }
+/* Credentials come first in the page (top on phones) but sit in the right column on wider screens */
+@media (min-width: 52rem) { .about { grid-template-columns: 2fr 1fr; gap: 4.5rem; align-items: start; } .about .facts { order: 2; } }
 .facts { font-size: 0.9375rem; margin: 0; }
 .facts dt { color: var(--muted); font-size: 0.9375rem; margin-top: 1.25rem; }
 .facts dt:first-child { margin-top: 0; }
@@ -167,7 +180,7 @@ strong { font-weight: 500; }
 .facts dd + dd { margin-top: 0.6rem; }
 
 /* Area navigation at the foot of service pages */
-.area-nav { padding-bottom: 4.5rem; }
+.area-nav { padding-bottom: 3.5rem; }
 .area-nav ol { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); font-size: 1rem; }
 .area-nav li { border-bottom: 1px solid var(--rule); }
 .area-nav a, .area-nav span { display: block; padding: 0.7rem 0; color: var(--ink); text-decoration: none; }
@@ -176,13 +189,22 @@ strong { font-weight: 500; }
 .area-nav span { color: var(--link); font-weight: 400; background: var(--soft); padding-left: 0.75rem; border-left: 3px solid var(--field); }
 
 /* Contact band */
-.contact { background: var(--band); color: var(--ground); padding: clamp(5rem, 10vw, 8.5rem) 0 4rem; }
+.contact { background: var(--band); color: var(--ground); padding: clamp(3.5rem, 7vw, 6rem) 0 3rem; }
 .contact h2 { color: var(--ground); font-size: clamp(2.25rem, 5vw, 3.5rem); margin-bottom: 1.5rem; }
 .contact p { max-width: var(--measure); font-size: 1.1875rem; }
 .contact a { color: var(--ground); word-break: break-word; }
 .contact .button { background: var(--accent); color: var(--band); margin-top: 1rem; }
 .contact .button:hover { color: var(--band); }
 .contact-icons { display: flex; gap: 1.25rem; align-items: center; margin-top: 2rem; }
+/* Contact page: the call to action sits on the beige ground under the photo */
+.contact.light { background: transparent; color: var(--ink); padding: 2.5rem 0 clamp(3.5rem, 7vw, 6rem); }
+.contact.light h2 { color: var(--ink); }
+.contact.light a { color: var(--ink); }
+.contact.light .button { background: var(--accent); color: var(--band); }
+.contact.light .button:hover { color: var(--band); }
+.contact.light .email-text a { color: var(--link); }
+.contact-page .site-footer { padding-top: 3rem; }
+.contact-page .site-footer .wrap { border-top: 0; padding-top: 0; }
 .icon-link { display: inline-flex; color: var(--ground); }
 .icon-link svg { width: 1.75rem; height: 1.75rem; }
 .icon-link:hover { color: var(--accent); }
