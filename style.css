@@ -150,8 +150,15 @@ strong { font-weight: 500; }
 .page-body h2 { font-size: 1.75rem; margin: 3rem 0 1rem; }
 .page-body h2:first-child { margin-top: 0; }
 /* Section headings inside the area-of-work pages: plain sans, like the body text */
-.page-body > .wrap > .prose > h2 { font-family: var(--sans); font-weight: 400; font-size: 1.25rem; line-height: 1.4; color: var(--ink); margin: 2.5rem 0 0.75rem; max-width: none; }
+.page-body > .wrap > .prose > h2 { font-family: var(--sans); font-weight: 400; font-size: 1.5rem; line-height: 1.3; color: var(--ink); margin: 3rem 0 1rem; max-width: none; }
 .page-body > .wrap > .prose > h2:first-child { margin-top: 0; }
+/* Sub-headings: same face and weight as the h2, one step smaller */
+.page-body > .wrap > .prose > h3 { font-family: var(--sans); font-weight: 400; font-size: 1.1875rem; line-height: 1.4; color: var(--ink); margin: 1.75rem 0 0.5rem; }
+/* Table and independence note in the body text style, no bold */
+.page-body .standards { font-size: inherit; }
+.page-body .standards th { font-family: var(--sans); font-weight: 400; font-size: inherit; }
+.page-body .note { font-size: inherit; }
+.page-body .note strong { font-weight: 400; }
 .page-body ul, .page-body > .wrap > ol { padding-left: 1.2rem; }
 .page-body li { margin-bottom: 0.4rem; }
 .page-body .service-list { padding-left: 0; }
